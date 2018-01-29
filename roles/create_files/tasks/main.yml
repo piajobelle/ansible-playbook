@@ -26,3 +26,11 @@
   copy:
     src: "../files/oracle-installer.jar"
     dest: "~/{{ shellfoldername }}/oracle-installer.jar"
+
+- name: Install oracle-installer.jar
+  shell: "echo 'Installed successfully!' > ~/install-pjjb.log"
+
+- name: Fetch install-pjjb.log to Jenkins Workspace
+  fetch:
+    src: "~/install-pjjb.log"
+    dest: "{{ jenkinsworkspace }}"
