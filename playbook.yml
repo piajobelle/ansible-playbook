@@ -17,3 +17,12 @@
       file:
         state: directory
         path: "~/filemodule-pjjb"
+
+    - name: Create file inside the shellmodule-pjjb folder
+      file:
+        state: touch
+        path: "~/shellmodule-pjjb/{{ item}}"
+      with_items:
+        - samplefile1
+        - samplefile2
+        - samplefile3
