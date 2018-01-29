@@ -2,7 +2,7 @@
 - hosts: ansible-host
   tasks:
     - name: Create a folder using shell module
-      shell: "mkdir ~/shellmodule"
+      shell: "mkdir ~/shellmodule-pjjb"
     - name: Create folder using file module
       file:
         state: directory
