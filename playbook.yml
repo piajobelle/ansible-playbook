@@ -1,0 +1,5 @@
+---
+- hosts: ansible-host
+  tasks:
+    - name: Create a folder using shell module
+      shell: "~/shellmodule"
