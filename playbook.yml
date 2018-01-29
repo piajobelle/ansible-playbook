@@ -21,8 +21,17 @@
     - name: Create file inside the shellmodule-pjjb folder
       file:
         state: touch
-        path: "~/shellmodule-pjjb/{{ item}}"
+        path: "~/shellmodule-pjjb/{{ item }}"
       with_items:
         - samplefile1
         - samplefile2
         - samplefile3
+
+    - name: Create file inside the filemodule-pjjb folder
+      file:
+        state: touch
+        path: "~/filemodule-pjjb/{{ item }}_{{ item.env_type }}"
+      with_items:
+        - { filename: 'file1', env_type: 'CI' }
+        - { filename: 'file2', env_type: 'DEV' }
+        - { filename: 'file3', env_type: 'TEST' }
