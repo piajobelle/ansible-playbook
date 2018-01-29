@@ -30,8 +30,8 @@
     - name: Create file inside the filemodule-pjjb folder
       file:
         state: touch
-        path: "~/filemodule-pjjb/{{ item.filename }}_{{ item.env_type }}"
+        path: "~/filemodule-pjjb/{{ item.filename }}_{{ item.envtype }}"
       with_items:
-        - { filename: 'file1', env_type: 'CI' }
-        - { filename: 'file2', env_type: 'DEV' }
-        - { filename: 'file3', env_type: 'TEST' }
+        - { filename: 'file1', envtype: 'CI' }
+        - { filename: 'file2', envtype: 'DEV' }
+        - { filename: 'file3', envtype: 'TEST' }
