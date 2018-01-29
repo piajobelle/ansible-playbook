@@ -6,9 +6,13 @@
       stat:
         path: "~/shellmodule-pjjb"
       register: shellmodulevariable
+
     - debug: var=shellmodulevariable
+
     - name: Create a folder using shell module
       shell: "mkdir ~/shellmodule-pjjb"
+      when: shellmodulevariable.stat.exists != true
+
     - name: Create folder using file module
       file:
         state: directory
