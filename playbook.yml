@@ -1,6 +1,6 @@
 ---
 - hosts: ansible-host
-  var_file:
+  vars_files:
     - passwordfile.yml
   roles:
     - { role: create_folder, tags: ['create_folder']}
