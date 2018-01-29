@@ -4,7 +4,9 @@
     #forced idempotency
     - name: Check if shellmodule-pjjb already exists
       stat:
-        path: "~/shellmodule-pjjb" 
+        path: "~/shellmodule-pjjb"
+      register: shellmodulevariable
+    - debug: var=shellmodulevariable
     - name: Create a folder using shell module
       shell: "mkdir ~/shellmodule-pjjb"
     - name: Create folder using file module
